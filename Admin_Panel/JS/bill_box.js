@@ -1,77 +1,8 @@
-/*
-function upd_sub_total()
-{
-    var formbox = document.forms.namedItem('confbill');
-    var i = 2;
-    var j = 3;
-    var k = 0;
-    var rng = formbox.elements.length;
-    rng-=3;
-    
-    //id var
-    var id = '';
-
-    //float var
-    var p = 0.0;
-    var q = 0.0;
-    var subtotal = 0.0;
-    var bill_total = 0.0;
-
-    while(j<=rng)
-    {
-        var price = formbox.elements[i].value;
-        var qty = formbox.elements[j].value;
-        // to float
-        p = parseFloat(price);
-        q = parseFloat(qty);
-        
-        subtotal = p*q;
-        subtotal = subtotal.toFixed(2);
-        subtotal = parseFloat(subtotal);
-          
-        id = 'subtotal-'+k.toString(10);
-        var subtxt = document.getElementById(id);
-        subtxt.innerText = subtotal;
-        i += 3;
-        j += 3;
-        k++;
-        bill_total += subtotal;
-    }
-
-    var discnt = document.getElementById('b_discnt').value;
-    bill_total = bill_total - parseFloat(discnt);
-
-    // assign bill total to text
-    var bt = document.getElementById('bill_t');
-    bt.innerText = bill_total;
-
-    // change to return
-    var pay = document.getElementById('b_cr').value;
-    var cash2ret = document.getElementById('c2r');
-    var ret_cash = parseFloat(pay) - bill_total;
-    
-    if(isNaN(ret_cash))
-    {
-        cash2ret.style.color = "red";
-        cash2ret.innerText = '*Insufficient Payment';
-    }
-    else if(ret_cash < 0)
-    {
-        cash2ret.style.color = "red";
-        cash2ret.innerText = '*Insufficient Payment';
-    }
-    else
-    {
-        cash2ret.style.color = "black";
-        cash2ret.innerHTML = '<b>Change to return:</b> ₹'+ret_cash;
-    }
-}
-*/
 function upd_sub_total()
 {
     var plist = document.getElementsByClassName('price');
     var qlist = document.getElementsByClassName('qty');
-    // var glist = document.getElementsByClassName('gst');
+    //var glist = document.getElementsByClassName('gst');
     var slist = document.getElementsByClassName('subttl');
 
     var tl = document.getElementById("bill_t");
@@ -88,7 +19,7 @@ function upd_sub_total()
     {
         p = parseFloat(plist[i].value);
         q = parseFloat(qlist[i].value);
-        // g = parseFloat(glist[i].innerText);
+        //g = parseFloat(glist[i].innerText);
         amt = p*q;
         amt = Math.round(amt*100)/100;
         total += amt;
@@ -118,9 +49,9 @@ function upd_sub_total()
 function setitemprice(itemid)
 {
     // console.log('Item id: '+itemid);
-    var pinput = document.getElementById('additem_p');
+    var pinput = document.getElementById('additem_p');    
     var qinput = document.getElementById('additem_q');
-    
+
     var data = 'getitemprice=1&itemid='+itemid;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../PHP/addnewitem.php', true);
@@ -182,6 +113,7 @@ function addnew()
         var subt = '<div class="subttl">'+subtval+'</div>';
         newitem.innerHTML = i_id + i_name + i_p + i_q + subt;
         rowholder.appendChild(newitem);
+        itemq.value = "";
         upd_sub_total();
     }
     xhr.send(data);

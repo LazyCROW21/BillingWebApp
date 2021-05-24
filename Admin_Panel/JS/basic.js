@@ -181,6 +181,7 @@ function changepage(pn, currpg)
 {
     var maxr = document.getElementById('maxrow').value;
     var maxpg = Math.ceil(parseInt(maxr)/20);
+    console.log(maxr, maxpg);
     if(pn == -1)
     {
         if(currpg == 1)
@@ -273,6 +274,7 @@ function emailbill(bid)
     xhr.open('POST', '../PHP/emailbill.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function(){
+        console.log(this.responseText);
         if('Message has been sent' != this.responseText)
         {
             alert('Error in sending mail! please check email address or customer entry');
