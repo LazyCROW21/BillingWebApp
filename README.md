@@ -18,4 +18,4 @@ Web App for Khodiyar Diary Parlor Patan
 - HTML/CSS/JS
 
 ## ScreenShots
-![Shopping site](./Screenshots/shoppingsite.png "shoppingsite")
+![Shopping site](https://github.com/LazyCROW21/BillingWebApp/blob/main/ScreenShots/shoppingsite.PNG "shoppingsite")
