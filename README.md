@@ -16,3 +16,6 @@ Web App for Khodiyar Diary Parlor Patan
 ## Technology Stack: 
 - Php + Phpmailer + fpdf.
 - HTML/CSS/JS
+
+## ScreenShots
+![Shopping site](/Screenshots/shoppingsite.png "shoppingsite")
