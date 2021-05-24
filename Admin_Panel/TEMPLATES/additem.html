@@ -1,0 +1,16 @@
+<div class="additemform">
+<form action="../PHP/additem.php" method="POST" enctype="multipart/form-data">
+    <label for="item-name">Item Name:</label>
+    <input type="text" name="item_name" max="32" placeholder="Item name.." required>
+    <label for="item-price">Item Price (incl tax amt):</label>
+    <input type="number" id="item-price" name="item_price" step="0.01" min="0.01" required>
+    <label for="item-gst">Total GST[SGST + CGST] (%):</label>
+    <input type="number" id="item-gst" name="item_gst" step="0.01" min="0" required>
+    <label for="item-stock">Item Stock:</label>
+    <input type="number" id="item-stock" name="item_stock" step="0.001" min="0.001" required>
+    <label for="fileToUpload">Item image(.jpg .jpeg .png only under 1 mb):</label>
+    <input type="file" name="fileToUpload" id="fileToUpload" required>
+    <input type="reset" value="RESET" name="reset">
+    <input type="submit" name="add_item" value="Add Item">
+</form>
+</div>

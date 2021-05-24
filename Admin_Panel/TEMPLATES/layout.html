@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- BASIC -->
+    <link rel="stylesheet" type="text/css" href="../CSS/admin_layout.css">
+
+    <!-- Icon for website -->
+    <link rel="shortcut icon" type="img/png" href="../img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../JS/basic.js">
+    </script>
+    <!-- BASIC -->
+
+    <title>
+        Admin Panel
+    </title>
+</head>
+<body>
+    <div id="main-block">
+        <div id="headline">
+            <img id="sliderbtn" src="../IMG/slidebar.png" height="32px" width="36px" onclick="openslidebar()">
+            <!--<div class="account"> -->
+                <img id="user-img" src="../IMG/favicon.png">
+                <span id="admin-user">Welcome, Yash</span>
+            <!--</div>-->
+            </div>
+        </div>
+        
+
+        <div id="slidebar">
+            <div id="heading">
+                <img src="../IMG/slidebar.png" onclick="closeslidebar()">
+                <span>Admin Panel</span>
+            </div>
+            <ul>
+                <li id="1" onclick="openurl('CreateBill/index.php')">
+                    <img src="../IMG/icons8-create-64.png">
+                    Create Bill
+                </li>
+                
+                <li id="2" onclick="openurl('ViewBill/viewbill.php')">
+                    <img src="../IMG/icons8-bill-64.png">
+                    View Bills
+                </li>
+                
+                <li id="3" onclick="openurl('AddItem/Additem.php')">
+                    <img src="../IMG/icons8-new-product-64.png">
+                    Add Item
+                </li>
+                
+                <li id="4">
+                    <img src="../IMG/icons8-trolley-64.png">
+                    View Items
+                </li>
+
+                <li id="5">
+                    <img src="../IMG/icons8-total-sales-64.png">
+                    Sales Analysis
+                </li>
+
+                <li id="6">
+                    <img src="../IMG/icons8-profile-64.png">
+                    Manage Staff
+                </li>
+            </ul>
+        </div>
+
+        <div id="page-content" onclick="closeslidebar()">
+            <div id="quotes">
+                <p>"Be the change <br> you want to see in <br> the world" <br> - <i>Mahatama Gandhi</i></p>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        This is a footer
+    </footer>
+</body>
+</html>

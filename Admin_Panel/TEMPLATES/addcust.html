@@ -1,0 +1,25 @@
+<div class="addcustbox">
+    <h2>ADD CUSTOMER</h2>
+    <!-- ../PHP/addcust.php -->
+    <form action="../PHP/addcust.php" method="POST" onsubmit="return validatecustform();">
+        <p>Customer Name:</p>
+        <input type="text" id="custn" name="cust_name" maxlength="32" required><br>
+        <p class="errormsg" id="errorn"></p>
+
+        <p>Customer Phone:</p>
+        <input type="text" id="custp" name="cust_phn" maxlength="10" required><br>
+        <p class="errormsg" id="errorp"></p>
+
+        <p>Customer Email:</p>
+        <input type="email" id="custe" name="cust_email" required><br>
+        <p class="errormsg" id="errore"></p>
+
+        <p>Customer GST(Optional):</p>
+        <input type="text" id="custg" name="cust_gst" maxlength="15"><br>
+        <p class="errormsg" id="errorg"></p>
+
+        <p>Customer Address:</p>
+        <textarea name="cust_addr" maxlength="255" required></textarea><br><br>
+        <input name="addcust" type="submit" value="Register">
+    </form>
+</div>

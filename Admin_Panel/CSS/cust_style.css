@@ -1,0 +1,280 @@
+.addcustbox{
+    margin: auto;
+    margin-top: 30px;
+    max-width: 500px;
+    max-height: 800px;
+    border: 1px solid black;
+    padding: 15px;
+    -webkit-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+
+    background-color: white;
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+
+.addcustbox form input{
+    padding: 3px;
+    margin-bottom: 8px;
+    width: 100%;
+    outline: thin lightblue;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.addcustbox textarea{
+    padding: 3px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 170px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.addcustbox form input[type="submit"]{
+    background-color: #50C878;
+    border: 0;
+    width: 100%;
+}
+
+.addcustbox form input[type="submit"]:hover{
+    background-color: #2c9950;
+}
+
+.errormsg{
+    font-family: 'Quicksand';
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.custbox{
+    font-family: 'Quicksand';
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+    padding: 8px;
+}
+
+.custtable{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: chocolate;
+    grid-row-gap: 2px;
+    width: 100%;
+}
+
+.custheadrow{
+    background-color: chocolate !important;
+    font-weight: 700;
+    font-size: 18px;
+    color: wheat;
+    border-bottom: 2px solid white;
+}
+
+.custrow{
+    display: grid;
+    grid-template-columns: 60px 150px 85px 300px 150px minmax(300px, 500px) 30px;
+    background-color: skyblue;
+    font-family: 'Quicksand';
+    font-size: 14px;
+    padding: 4px;
+    overflow-x: scroll;
+}
+
+.editcustbtn{
+    background-color: blue;
+    color: whitesmoke;
+    padding: 3px;
+}
+
+.editcustbtn:hover{
+    background-color: rgba(26, 129, 226, 0.856);
+    color: white;
+}
+
+#editwrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(200, 200, 200, 0.9);
+}
+
+#editcustbox{
+    position: relative;
+    display: none;
+    z-index: 0;
+    padding: 8px;
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    font-family: 'Quicksand';
+}
+
+#closecustebox{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#closecustebox:hover{
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+    filter: invert(100%);
+}
+
+
+#editcustbox *{
+    padding: 4px;
+}
+
+#editcustbox form input{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    margin-bottom: 12px;
+    min-width: 400px;
+    padding: 2px;
+}
+
+#editcustbox textarea{
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 80px;
+    max-height: 150px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+#updctm{
+    background-color: rgb(23, 80, 187);
+    color: white;
+}
+
+#dctm{
+    color: white;
+    background-color: red;
+}
+
+/* Paging System */
+.viewcustpage{
+    width: 100%;
+    padding: 64px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.viewcustpage button{
+    margin: 8px;
+    padding: 4px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+
+#prev{
+    float: left;
+}
+
+#nxt{
+    float: right;
+}
+
+/* 
+@media only screen and (max-width:1000px) and (min-width: 510px) {
+    .custrow{
+        grid-template-columns: 60px 150px 85px 1fr 30px
+    }
+    .custbox :nth-child(4)
+    {
+        grid-column: 4/6;
+    }
+    .custbox :nth-child(5)
+    {
+        grid-column: 1/5;
+        border-top: 1px solid white;
+    }
+} */
+
+@media only screen and (max-width:500px) {
+    .addcustbox{
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        font-size: 12px;
+    }
+    .addcustbox form input{
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .addcustbox textarea{
+        font-size: 14px;
+    }
+
+    .custbox{
+        padding: 0;
+        margin: 0;
+        margin-top: 12px;
+        width: 100%;
+    }
+    .custrow{
+        grid-template-columns: 1fr;
+        margin: 0;
+        border: 1px solid red;
+        max-width: 100%;
+    }
+    .custrow div{
+        border-bottom: 1px dotted saddlebrown;
+        /* border: 1px solid red; */
+        /* display: inline; */
+        /* max-width: 100%; */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #editcustbox{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    #editcustbox form input{
+        font-size: 14px;
+        margin-bottom: 8px;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    #editcustbox textarea{
+        min-width: 95%;
+        max-width: 95%;
+        font-size: 14px;
+    }
+
+    /* Paging System */
+    .viewcustpage{
+        padding: 32px;
+        padding-top: 10px;
+        box-sizing: border-box;
+    }
+
+    .viewcustpage button{
+        margin: 8px;
+        padding: 4px;
+        font-size: 14px;
+    }
+}

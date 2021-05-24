@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: 'Rubik';
+    src: url('../CSS/fonts/Rubik/Rubik-Bold.ttf');
+}
+
+@font-face{
+    font-family: 'Quicksand';
+    src: url('../CSS/fonts/Quicksand/static/Quicksand-Light.ttf');
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    background-image: url('../IMG/background.jpg');
+    background-origin: border-box;
+    background-size: minmax(1280px, 100%) 100vh;
+    background-repeat: repeat-x;
+    margin: 0;
+    margin-bottom: 80px;
+    height: 100%;
+}
+
+#main-block{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: block;
+}
+
+/* Head line starts*/
+#headline{
+    display: block;
+    background-color: rgba(250, 250, 250, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    position: relative;
+}
+
+/* Just for logout button */
+#account{
+    width: 120px;
+    height: 0;
+    position: absolute;
+    background-color: rgba(230, 230, 230, 0.6);
+    text-align: left;
+    right: 10px;
+    top: 80px;
+    z-index: 3;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
+
+#account[show="true"]{
+    height: 40px;
+}
+
+#account[show="false"]{
+    height: 0;
+}
+
+#account > div {
+    padding: 4px;
+    border-top: 1px solid black;
+    margin: 2px;
+}
+
+#account a{
+    text-decoration: none;
+    color: black;
+}
+
+#lgout:hover{
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+/* Just for logout button */
+
+#sliderbtn{
+    padding: 20px;
+}
+
+#admin-user{
+    padding: 8px;
+    margin-top: 36px;
+    float: right;
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+
+#user-img{
+    float: right;
+    height: 48px;
+    width: 48px;
+    border: 1px black solid;
+    padding: 2px;
+    margin-top: 12px;
+    margin-right: 12px;
+    border-radius: 50%;
+}
+
+#user-img:hover{
+    border-width: 2px;
+    border-color: blueviolet;
+    transition: linear 150ms;
+}
+
+/* Head line ends */
+
+/* Slide bar starts here */
+#slidebar{
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    height: 100%;
+    left: -300px;
+    width: 300px;
+    background-color: rgba(250, 250, 250, 0.8);
+    backdrop-filter: blur(7px);
+    line-height: 4rem;
+    transition: 0.3s linear;
+    z-index: 3;
+    overflow-y: scroll;
+}
+
+#slidebar[show="false"]{
+    left: -300px;
+}
+#slidebar[show="true"]{
+    left: 0px;
+}
+
+#slidebar #heading{
+    border-bottom: 1px solid lightgrey;
+    font-family: 'Rubik';
+    font-size: 24px;
+}
+
+#slidebar #heading img{
+    padding: 20px;
+    padding-bottom: 0;
+    height: 32px;
+    width: 36px;
+}
+
+#slidebar img{
+    height: 32px;
+    width: 36px;
+}
+
+#slidebar ul{
+    list-style: none;
+}
+
+#slidebar ul li{
+    /* border: 2px solid red; */
+    /* 16px padding for space btw img and 20px for img to window */
+    padding: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-family: 'Quicksand';
+    font-size: 20px;
+}
+
+
+/* alag alga color */
+#slidebar ul li:nth-child(1):hover
+{
+    background-color: rgba(238,130,238, 0.5);
+}
+
+#slidebar ul li:nth-child(2):hover
+{
+    background-color: rgba(75,0,130, 0.5);
+}
+
+#slidebar ul li:nth-child(3):hover
+{
+    background-color: rgba(65,105,225, 0.5);
+}
+
+#slidebar ul li:nth-child(4):hover
+{
+    background-color: rgba(173,255,47, 0.5);
+}
+
+#slidebar ul li:nth-child(5):hover
+{
+    background-color: rgba(240,230,140, 0.5);
+}
+
+#slidebar ul li:nth-child(6):hover
+{
+    background-color: rgba(255,99,71, 0.5);
+}
+
+#slidebar ul li:nth-child(7):hover
+{
+    background-color: rgba(184,15,10, 0.5);
+}
+
+#slidebar ul li:hover{
+    font-size: 28px;
+    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    /* height: 36px;
+    width: 42px; */
+}
+
+/* Slide bar ends here */
+
+/* page content css here */
+.page-content{
+    background-color: rgba(250, 250, 250, 0.5);
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding-bottom: 32px;
+    padding-top: 16px;
+}
+
+#quotes{
+    text-align: center;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    margin: auto;
+    margin-top: 64px;
+}
+/* page content css ends here */
+
+/* footer css */
+#footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    padding-top: 16px;
+    background-color: rgb(90, 51, 34);
+    text-align: center;
+    display: block;
+    color: wheat;
+    font-family: 'Quicksand';
+    font-size: 20px;
+    z-index: 1;
+}
+/* end of footer css */

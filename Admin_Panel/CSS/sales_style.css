@@ -1,0 +1,23 @@
+.exportxls{
+    padding: 12px;
+    background-color: rgba(200, 200, 200, 0.7);
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+
+.exportxls p{
+    margin-bottom: 8px;
+}
+
+.exportxls input[type="submit"]{
+    padding: 4px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    background-color: rgb(48, 179, 48);
+    border: 0;
+    font-weight: 700;
+}
+
+.exportxls input[type="submit"]:hover{
+    background-color: rgb(17, 139, 17);
+}

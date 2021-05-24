@@ -1,0 +1,458 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Inconsolata;
+    src: url(fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face{
+    font-family: gujju;
+    src: url(fonts/Hind_Vadodara/HindVadodara-Regular.ttf);
+}
+
+:root {
+    --main-bg-color: #57A0D3;
+    --box-bg-color: #B0DFE5;
+    --row-bg-color: #95C8D8;
+    --rowhead-bg-color: #588BAE;
+    --alterrow-bg-color: #73C2FB;
+}
+
+body{
+    background-color: var(--main-bg-color);
+    font-family: 'Inconsolata';
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 200px;
+}
+.box{
+    background-color: var(--box-bg-color);
+    width: 85%;
+    margin: auto;
+    margin-top: 75px;
+    border-radius: 12px;
+    padding: 12px;
+    padding-bottom: 60px;
+    font-size: 24px;
+}
+
+input{
+    outline: thin;
+    font-size: 22px;
+}
+
+input[type="text"]{
+    width: 50%;
+    padding: 6px;
+}
+input[type="radio"]{
+    margin-right: 4px;
+}
+input[type="datetime-local"]
+{
+    font-family: 'Inconsolata';
+    padding: 4px;
+    margin: 4px;
+}
+.ItemTable{
+    display: grid;
+    margin-top: 16px;
+    padding: 2px;
+    width: 100%;
+    grid-template-columns: 24px 2fr 1fr 1fr;
+    border: double darkblue;
+}
+
+.row{
+    padding: 8px;
+    background-color: var(--row-bg-color);
+}
+
+.rowhead{
+    background-color: var(--rowhead-bg-color) !important;
+    font-weight: bold;
+}
+
+.row:nth-child(8n+1)
+{
+    background-color: var(--alterrow-bg-color);
+}
+
+.row:nth-child(8n+2)
+{
+    background-color: var(--alterrow-bg-color);
+}
+
+.row:nth-child(8n+3)
+{
+    background-color: var(--alterrow-bg-color);
+}
+
+.row:nth-child(8n+4)
+{
+    background-color: var(--alterrow-bg-color);
+}
+
+.row:nth-child(4n+3){
+    text-align: right;
+}
+.row:nth-child(4n+4){
+    text-align: right;
+}
+/* Special remove btn */
+.row:nth-child(4n+5):hover:not(.additembtn){
+    color: red;
+    transition: all ease-out 200ms;
+    cursor: pointer;
+}
+/* Special Add item button */
+.additembtn{
+    grid-column: 1/5;
+}
+.additembtn:hover{
+    background-color: slateblue;
+    transition: all ease-in 200ms;
+    color: white;
+}
+
+/* Input Styling */
+.ItemQty{
+    color: white;
+    font-family: 'Inconsolata';
+    padding-top: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    font-size: 24px;
+    text-align: right;
+}
+
+/* Item menu */
+.itemmenubox{
+    height: 95vh;
+    width: 95vw;
+    overflow-y: scroll;
+    margin: auto;
+    margin-top: 2vh;
+    background-color: white;
+    position: absolute;
+    left: 2.5vw;
+    display: none;
+    z-index: 5;
+}
+#closemenubox{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    font-size: 24px;
+    outline: thin;
+}
+#searchitem{
+    margin: 8px;
+    font-size: 24px;
+    width: 70%;
+    font-family: 'Inconsolata';
+}
+.itemmenugrid{
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    justify-content: space-evenly;
+    padding: 8px;
+    grid-column-gap: 4px;
+    grid-row-gap: 8px;
+}
+/* .itemmenugrid div{
+    width: 100%;
+    height: 150px;
+    background-color: blanchedalmond;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 8px;
+} */
+
+.item{
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: #eeeeee;
+    height: 80px;
+    font-family: 'Inconsolata';
+}
+.item div{
+    padding: 5px;
+}
+.itemimg{
+    width: 100%;
+}
+
+.itemaddbtn{
+    position: absolute;
+    bottom: calc(50% - 10px);
+    right: 10px;
+    border-radius: 8px;
+    border: 0;
+    padding: 5px;
+    background-color: rgb(36, 160, 36);
+    color: white;
+}
+
+.itemaddbtn:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+    transition: all linear 200ms
+}
+.itemaddbtn:active{
+    transform: translateY(2px);
+    transition: all linear 200ms;
+}
+
+/* .itemimg{ old
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+} */
+/* .isbtn{
+    position: absolute;
+    bottom: 45px;
+    right: 12px;
+    font-family: 'Inconsolata';
+    background-color: white;
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid black;
+    outline: thin;
+} */
+/* .isbtn:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    transition: all linear 200ms;
+}
+.isbtn:active{
+    transform: translateY(2px);
+    transition: all linear 200ms;
+} */
+.itemtitle{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-family: 'Inconsolata';
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+.ItemN:hover{
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: white;
+    transition: all linear 300ms;
+}
+/* Item Menu Ends here */
+
+/* order btn css */
+.placeOrderBtn{
+    padding: 6px;
+    border: 1px solid darkblue;
+    background-color: lightblue;
+    color: darkblue;
+    margin: 0;
+    margin-top: 16px;
+    transition: all linear 200ms;
+    outline: thin;
+    font-family: 'Inconsolata';
+    font-size: 24px;
+    float: right;
+}
+.placeOrderBtn:hover{
+    border: 1px solid lightblue;
+    background-color: darkblue;
+    color: lightblue;
+}
+.placeOrderBtn:active{
+    transform: translateY(2px);
+}
+/* order btn css end */
+
+/* Error class */
+.errorp{
+    font-family: 'Inconsolata';
+    font-size: 20px;
+    color: red;
+    margin: 3px;
+    font-weight: bold;
+}
+/* Error class end */
+
+@media screen and (max-width: 1250px){
+    .itemmenugrid{
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+@media screen and (max-width: 850px)
+{
+    .itemmenugrid{
+        grid-template-columns: 400px;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .container{
+        padding-left: 10%;
+        padding-right: 10%;
+    }    
+    .box{
+        width: 80%;
+        margin-top: 60px;
+        border-radius: 10px;
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 22px;
+        padding-bottom: 60px;
+    }
+    input{
+        font-size: 20px;
+    }
+    input[type="text"]{
+        width: 60%;
+        padding: 4px;
+    }
+    .row{
+        padding: 7px;
+    }
+    .ItemQty{
+        font-size: 22px;
+    }
+    #searchitem{
+        margin: 7px;
+        font-size: 22px;
+    }
+    #closemenubox{
+        top: 7px;
+        right: 7px;
+    }
+    .itemmenugrid{
+        padding: 7px;
+    }
+    .placeOrderBtn{
+        font-size: 22px;
+        padding: 7px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .box{
+        width: 90%;
+        margin-top: 45px;
+        border-radius: 8px;
+        padding: 8px;
+        padding-top: 16px;
+        font-size: 20px;
+        padding-bottom: 60px;
+    }
+    input{
+        font-size: 18px;
+    }
+    input[type="text"]{
+        width: 75%;
+    }
+    .row{
+        padding: 6px;
+    }
+    .ItemQty{
+        font-size: 20px;
+    }
+    #searchitem{
+        margin: 6px;
+        font-size: 20px;
+    }
+    #closemenubox{
+        top: 6px;
+        right: 6px;
+    }
+    .itemmenugrid{
+        padding: 6px;
+    }
+    .placeOrderBtn{
+        font-size: 20px;
+        padding: 6px;
+    }
+    .errorp{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .box{
+        width: 100%;
+        margin-top: 0px;
+        border-radius: 0px;
+        padding: 6px;
+        padding-top: 12px;
+        font-size: 18px;
+        padding-bottom: 60px;
+    }
+    input{
+        font-size: 16px;
+    }
+    input[type="text"]{
+        width: 90%;
+    }
+    .row{
+        padding: 4px;
+    }
+    .ItemQty{
+        font-size: 18px;
+    }
+    #searchitem{
+        margin: 4px;
+        font-size: 18px;
+    }
+    #closemenubox{
+        top: 4px;
+        right: 4px;
+        width: 26px;
+        height: 26px;
+        font-size: 22px;
+    }
+    .itemmenugrid{
+        padding: 4px;
+        width: 100%;
+        grid-template-columns: 98%;
+    }
+    .itemmenugrid div{
+        width: 100%;
+    }
+    .placeOrderBtn{
+        font-size: 18px;
+        padding: 4px;
+    }
+    .errorp{
+        font-size: 16px;
+    }
+}

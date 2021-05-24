@@ -1,0 +1,779 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#addemptybill{
+    background: rgb(42, 36, 155);
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 4px;
+    font-family: 'Quicksand';
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    border: 1px solid lightblue;
+    border-radius: 16px;
+    cursor: pointer;
+}
+#addemptybill:hover{
+    background: rgb(7, 96, 155);
+    -webkit-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+}
+
+.view-bill{
+    background-color: white;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    width: 95%;
+    margin: auto;
+    margin-top: 0;
+    padding: 0;
+}
+
+.view-bill h2{
+    text-align: center;
+    padding-top: 32px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-family: 'Rubik';
+}
+
+.pog{
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr;
+    padding: 4px;
+    font-size: 18px;
+}
+
+/* New Bill Details */
+/* 'Bill ID','Customer Name', 'Customer Phone', 'Order Date&Time', 'OPEN/REJECT' */
+.pog-new_b_head{
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr 4fr 2fr 2fr 2fr;
+    background-color: black;
+    color: white;
+    padding: 4px;
+    text-align: center;
+}
+
+.pog-nbr{
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr 4fr 2fr 2fr 2fr;
+    background-color: aquamarine;
+    color: black;
+    align-items: center;
+    padding-left: 4px;
+    text-align: center;
+}
+
+.open-bill-btn{
+    background-color: #4CBB17;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: 700;
+    border: 0;
+    color: whitesmoke;
+    padding: 2px 4px 2px 4px;
+    margin: 4px;
+    margin-right: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.open-bill-btn:hover{
+    background-color: darkgreen;
+}
+
+.reject-bill-btn{
+    background-color: red;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: 700;
+    border: 0;
+    color: whitesmoke;
+    padding: 2px 4px 2px 4px;
+    margin: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.reject-bill-btn:hover{
+    background-color: darkred;
+}
+/* ends here */
+
+/* Place order Details */
+/* ('Bill ID','Customer Name', 'Customer Phone', 'Total', 'Order Date&Time', 'View Details') */
+/* 1 - 4 - 2 - 2 - 2 - 1 */
+
+/* search menu */
+.searchmenu{
+    display: grid;
+    width: 95%;
+    grid-template-columns: 1fr;
+    margin: auto;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    justify-items: end;
+}
+.searchmenu form{
+    width: 100%;
+    text-align: right;
+}
+.sbar, .chkbox, .sortbox{
+    display: block;
+    width: 95%;
+    padding: 2px;
+    margin: 2px;
+}
+
+.searchmenu input, .searchmenu select, .searchmenu span{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    padding: 2px;
+    margin: 2px;
+    /* float: right; */
+}
+
+.searchmenu input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* Paging system */
+.prvnxt{
+    display: block;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    background-color: white;
+    margin-top: 20px;
+    /* border: 2px solid red; */
+}
+
+.prvnxt *{
+    display: inline-block;
+}
+
+.prvbtn, .nxtbtn{
+    padding: 6px;
+    margin: 6px;
+    background-color: #0f52bA;
+    color: whitesmoke;
+    border: 1px solid #89CFF0;
+    cursor: pointer;
+}
+
+.prvbtn:hover, .nxtbtn:hover{
+    background-color: rgb(18, 66, 138);
+    border: 1px solid rgb(15, 65, 88);
+}
+
+
+.prvbtn:disabled, .nxtbtn:disabled{
+    background-color: rgb(69, 73, 78);
+    border: 1px solid rgb(71, 75, 76);
+}
+
+
+.prvbtn{
+    float: left;
+    width: 70px;
+}
+
+.nxtbtn{
+    float: right;
+    width: 70px;
+}
+
+.pg{
+    width: calc(92% - 140px);
+    text-align: center;
+}
+
+/* till here */
+
+.pog-head{
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 2fr 2fr 1fr;
+    background-color: black;
+    color: white;
+    padding-left: 4px;
+    text-align: center;
+}
+
+.pog-basic{
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+}
+
+.pog-full{
+    display: block;
+    background-color: bisque;
+    height: 0;
+    overflow: hidden;
+    /* transition-property: all;
+    transition-duration: 500ms;
+    transition-delay: 0ms;
+    transition-timing-function: ease-out; */
+}
+
+.odt{
+    /* float: left; */
+    text-align: left;
+}
+
+.pog-full[show="false"]
+{
+    height: 0;
+}
+.pog-full[show="true"]{
+    height: auto;
+}
+
+.view-d{
+    background-color: greenyellow;
+    cursor: pointer;
+}
+.view-d:hover{
+    background-color: darkgreen;
+    color: whitesmoke;
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Grid Head Item_ID - Item Name - Price - Qty - Subtotal */
+.item_list{
+    padding: 4px;
+    display: grid;
+    grid-gap: 2px;
+    /* grid-template-columns: 1fr 3fr 2fr 1fr 1fr 2fr 2fr; */
+    grid-template-columns: 5% 25% 14% 14% 14% 14% 14%;
+    border-bottom: 1px solid darkslategray;
+    font-weight: bold;
+}
+
+.item_list:nth-child(even){
+    background-color: #e4c49b;
+}
+
+/* .item_list .irowpqta{
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr 3fr 3fr;
+    grid-gap: 0;
+} */
+/* .item_list .irowidname
+{
+    display: grid;
+    grid-template-columns: 80px auto;
+} */
+/* .irowpq div{
+    border-right: 1px dotted brown;
+} */
+
+
+.rdt{
+    padding: 4px;
+}
+
+.item_lhb{
+    font-weight: 700;
+}
+/* print bill buttons */
+/* .pbill{
+    padding: 4px;
+    margin: 4px;
+    /* float: left;
+    background-color: white;
+    border: #4CBB17;
+} */
+.pbill{
+    display: block;
+    padding: 4px;
+    margin: 4px;
+    float: right;
+    background-color: white;
+    border: 2px solid #4CBB17;
+}
+.pbill:hover{
+    background-color: rgb(240, 240, 240);
+    border: 2px solid rgb(47, 122, 12);
+}
+
+/* View Bill ends */
+
+/* Confirm bill */
+.confirm-wrapper{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.7);
+    display: none;
+    z-index: 0;
+    position: fixed;
+}
+
+.confirm-box{
+    padding: 4px;
+    background-color: whitesmoke;
+    font-weight: 500;
+    font-family: 'Quicksand';
+    font-size: 20px;
+    width: 640px;
+    height: 75%;
+    top: calc(50% - 300px);
+    /* display: none; */
+    position: fixed;
+    left: calc(50% - 300px);
+    z-index: 3;
+    display: none;
+    /* overflow-y: scroll; */
+}
+/* close button */
+.box-x{
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    outline: 0;
+    z-index: 3;
+}
+
+.box-x:hover{
+    background-color: red;
+    /* border-color: black; */
+}
+
+.confirm-box table{
+    width: 100%;
+    background-color: aquamarine;
+    text-align: left;
+    margin-top: 16px;
+}
+
+.confirm-box th{
+    background-color: chocolate;
+    color: burlywood;
+    padding-left: 4px;
+}
+
+.confirm-box td{
+    padding-left: 4px;
+    border-bottom: 1px solid darkorchid;
+}
+
+.confirm-box .bill-box{
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    z-index: 3;
+    /* background-color: brown; */
+}
+
+.confirm-box input{
+    padding: 4px;
+    font-family: 'Quicksand';
+    font-size: 20px;
+    width: min-content;
+    float: right;
+    text-align: right;
+}
+
+.confirm-box input[type="submit"]{
+    float: right;
+    margin: 16px;
+    padding: 6px;
+    background-color: #4CBB17;
+    color: azure;
+    border: 0;
+    cursor: pointer;
+}
+
+.confirm-box input[type="submit"]:hover{
+    background-color: darkgreen;
+}
+
+.discount{
+    display: grid;
+    text-align: right;
+    line-height: 32px;
+    margin-top: 16px;
+    grid-template-columns: calc(100% - 120px) 120px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.discount input{
+    width: 100px;
+    padding: 2px;
+}
+
+/* edit bill */
+.confirm-box .editbill{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* float: right; */
+    /* padding: 4px; */
+    margin: 4px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    width: 97%;
+    box-sizing: border-box;
+}
+
+.additempanel{
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr;
+    background-color: #4CBB17;
+    padding: 0;
+    margin: 0;
+}
+
+.additempanel select{
+    /* background-color: white; */
+    width: 95%;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    border: 2px solid lightblue;
+    /* margin: 4px; */
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.additempanel input{
+    background-color: white;
+    width: 95%;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    border: 2px solid lightblue;
+    padding: 2px;
+    /* margin: 4px; */
+    box-sizing: border-box;
+}
+
+.additempanel button{
+    width: 70%;
+    float: right;
+    font-size: 18px;
+    padding: 4px;
+    margin: 2px;
+    overflow: hidden;
+}
+
+.editmenuhead{
+    grid-column: 1/5;
+    color: white;
+    padding: 4px;
+    margin: 4px;
+}
+
+.confirm-box .editbill button{
+    background-color: white;
+    width: 80px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    border: 2px solid lightblue;
+    margin: 4px;
+    padding: 4px;
+}
+.confirm-box .editbill button:hover{
+    background-color: lightblue;
+    font-weight: 900;
+    border: 2px solid blue;
+}
+/* edit bill rmv btn */
+.rmvitembtn{
+    padding: 2px;
+    margin: 4px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    background-color: lightcoral;
+    color: black;
+    height: 24px;
+    width: 24px;
+    border: 1px solid;
+    border-radius: 50%;
+    margin-left: -12px;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    outline: none;
+}
+.rmvitembtn:hover{
+    background-color: black;
+    color: crimson;
+}
+
+.subttl{
+    text-align: right;
+    padding-right: 6px;
+}
+
+#cbill_ilist{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    /* margin: auto; */
+    padding: 0;
+    box-sizing: border-box;
+    /* margin: 0; */
+}
+
+.cbill_row{
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr;
+    font-size: 18px;
+    text-align: right;
+}
+
+.cbill_row div{
+    padding: 2px;
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.cbillhead{
+    /* font-size: 18px; */
+    font-weight: 700;
+    background-color: burlywood;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.cbillrow{
+    position: relative;
+    font-weight: 500;
+    background-color: darksalmon;
+    width: 100%;
+}
+
+.cbillrow input{
+    width: 88%;
+}
+
+#c2r, .total{
+    padding-right: 6px;
+}
+
+#c2r{
+    grid-column: 1/3;
+    color: red;
+    font-weight: 500;
+}
+
+/* Edit Bill Deatil */
+.editbill_d{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+}
+
+.editbill_d input{
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    float: left;
+    text-align: left;
+}
+.editbill_d select{
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    float: left;
+    text-align: left;
+}
+.editbill_d #ebd_rdt{
+    grid-column: 1/3;
+}
+/* Edit bill details end here */
+
+
+
+/* responsive */
+
+@media only screen and (max-width:750px) {
+    .confirm-box{
+        padding: 8px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 90%;
+        top: 5%;
+        /* display: none; */
+        position: fixed;
+        left: 0;
+        /* overflow-y: scroll; */
+    }
+    .confirm-box .bill-box{
+        width: 100%;
+        height: 90%;
+        font-size: 14px;
+    }
+    .confirm-box input{
+        padding: 4px;
+        font-family: 'Quicksand';
+        font-size: 14px;
+        width: 25%;
+        float: right;
+    }
+    .box-x{
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        height: 28px;
+        width: 28px;
+        border-radius: 14px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 900;
+        font-size: 14px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        outline: 0;
+    }
+    .discount{
+        /* display: block; */
+        text-align: right;
+        line-height: 32px;
+        margin-top: 16px;
+        font-size: 14px;
+        margin-right: 12px;
+    }
+    .discount input{
+        width: 100px;
+        padding: 2px;
+    }
+    .rdt{
+        font-size: 12px;
+        padding: 2px;
+    }
+    .pog-head{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr, 6);
+    }
+    .item_list{
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(1fr, 7); */
+        /* border: 1px solid brown; */
+        grid-gap: 0;
+        margin: 2px;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    /* .item_list .irowidname
+    {
+        grid-template-columns: 67px auto;
+    } */
+    /* .irowidname div
+    {
+        padding: 4px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    } */
+    /* .item_list .irowpqta{
+        grid-template-columns: 67px 2fr 3fr 3fr 3fr;
+    }
+    .item_list .irowpqta div{
+        border: 1px solid black;
+        text-align: right;
+        padding-right: 6px;
+    } */
+    .pog-new_b_head{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr, 5);
+    }
+    
+    .pog-nbr{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr, 5);
+    }
+
+    .odt{
+        /* float: left; */
+        text-align: center;
+    }
+    
+    .searchmenu input, .searchmenu select, .searchmenu span{
+        font-size: 14px;
+    }
+    
+    .searchmenu input[type="checkbox"]{
+        height: 16px;
+        width: 16px;
+    }
+    .additempanel select{
+        width: 95% !important;
+        font-size: 14px;
+        border: 2px solid lightblue;
+    }
+    
+    .additempanel input{
+        width: 95% !important;
+        font-size: 14px;
+    }
+    .cbill_row{
+        font-size: 14px;
+    }
+    .cbillrow input{
+        width: 96%;
+        padding: 2px;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+    .additempanel button{
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    #addemptybill{
+        width: 95%;
+        font-size: 18px;
+    }
+    .pbill{
+        margin: 2px;
+        padding: 2px;
+        width: 32%;
+    }
+    
+    /* Edit Bill Deatil */
+    .editbill_d input
+    {
+        font-size: 12px;
+        padding: 1px;
+        float: left;
+        width: 100%;
+        font-weight: bold;
+    }
+    /* Edit bill details end here */
+}
